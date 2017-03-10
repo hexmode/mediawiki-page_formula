@@ -19,13 +19,16 @@
 
 namespace PageNameFormula;
 
-class PageNameFormula {
+class Hook {
 
+	/**
+	 * Hook to update extension
+	 * @param DatabaseUpdater $updater db handle
+	 */
 	public static function onLoadExtensionSchemaUpdates(
 		DatabaseUpdater $updater
 	) {
 		$updater->addExtensionTable( 'mapping',
 									 __DIR__ . '/sql/mapping.sql' );
-		return true;
 	}
 }
