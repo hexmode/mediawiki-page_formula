@@ -14,16 +14,16 @@
 		]
 	},
 	"AutoloadClasses": {
-		"PageNameFormula\\PageNameFormula": "src/PageNameFormula.php"
+		"PageNameFormula\\PageNameFormula": "src/PageNameFormula.php",
 		"PageNameFormula\\Hook": "src/Hook.php"
 	},
-    "Hooks": {
+	"Hooks": {
 		  "LoadExtensionSchemaUpdates": [
-			  "PageNameFormula\Hook::onLoadExtensionSchemaUpdates"
+			  "PageNameFormula\\Hook::onLoadExtensionSchemaUpdates"
 		  ]
 	},
 	"config": {
-		"_prefix": "PageNameFormula",
-        },
+		"_prefix": "PageNameFormula"
+	},
 	"manifest_version": 1
 }
