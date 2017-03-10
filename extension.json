@@ -16,8 +16,13 @@
 	"AutoloadClasses": {
 		"PageNameFormula": "src/PageNameFormula.php"
 	},
+    "Hooks": {
+		  "LoadExtensionSchemaUpdates": [
+			  "PageNameFormula\Hook::onLoadExtensionSchemaUpdates"
+		  ]
+	},
 	"config": {
 		"_prefix": "PageNameFormula",
-	},
+        },
 	"manifest_version": 1
 }
