@@ -19,6 +19,8 @@
 
 namespace PageNameFormula;
 
+use DatabaseUpdater;
+
 class Hook {
 
 	/**
