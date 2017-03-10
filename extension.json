@@ -1,0 +1,23 @@
+{
+	"name": "PageNameFormula",
+	"version": "0.0.0",
+	"license-name": "GPL-3.0",
+	"author": [
+		"[http://mwstake.org Mark A. Hershberger]"
+	],
+	"require": [ "1.28" ],
+	"descriptionmsg": "pagenameformula-desc",
+	"type": "specialpage",
+	"MessagesDirs": {
+		"PageNameFormula": [
+			"i18n"
+		]
+	},
+	"AutoloadClasses": {
+		"PageNameFormula": "src/PageNameFormula.php"
+	},
+	"config": {
+		"_prefix": "PageNameFormula",
+	},
+	"manifest_version": 1
+}
