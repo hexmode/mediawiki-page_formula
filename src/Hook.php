@@ -33,4 +33,24 @@ class Hook {
 		$updater->addExtensionTable( 'mapping',
 									 __DIR__ . '/../sql/mapping.sql' );
 	}
+
+	/**
+	 * Set up functions
+	 *
+	 * @param Parser $parser parser
+	 */
+	public static function onParserFirstCallInit( $parser ) {
+		// These functions accept DOM-style arguments
+		$parser->setFunctionHook( 'page_name_formula', 'PageNameFormula\Hook::Formula' );
+	}
+
+	/**
+	 * Prove it works
+	 * @param Parser $parser the parser
+	 * @param string $formula for the page
+	 * @return string
+	 */
+	public static function Formula( $parser, $formula = '' ) {
+		return "hey";
+	}
 }
