@@ -31,6 +31,6 @@ class Hook {
 		DatabaseUpdater $updater
 	) {
 		$updater->addExtensionTable( 'mapping',
-									 __DIR__ . '/sql/mapping.sql' );
+									 __DIR__ . '/../sql/mapping.sql' );
 	}
 }
