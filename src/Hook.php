@@ -40,8 +40,9 @@ class Hook {
 	 * @param Parser $parser parser
 	 */
 	public static function onParserFirstCallInit( $parser ) {
+		wfDebugLog( __METHOD__, "i am here" );
 		// These functions accept DOM-style arguments
-		$parser->setFunctionHook( 'page_name_formula', 'PageNameFormula\Hook::Formula' );
+		$parser->setFunctionHook( 'page_name_formula', "PageNameFormula\\Hook::Formula" );
 	}
 
 	/**

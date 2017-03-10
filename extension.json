@@ -5,6 +5,7 @@
 	"author": [
 		"[http://mwstake.org Mark A. Hershberger]"
 	],
+	"url": "https://www.mediawiki.org/wiki/Extension:PageNameFormula",
 	"require": [ "1.28" ],
 	"descriptionmsg": "pagenameformula-desc",
 	"type": "parserhook",
@@ -13,14 +14,20 @@
 			"i18n"
 		]
 	},
+	"ExtensionMessagesFiles": {
+		"PageNameFormulaMagic": "src/i18n/Magic.php"
+	},
 	"AutoloadClasses": {
 		"PageNameFormula\\PageNameFormula": "src/PageNameFormula.php",
 		"PageNameFormula\\Hook": "src/Hook.php"
 	},
 	"Hooks": {
-		  "LoadExtensionSchemaUpdates": [
-			  "PageNameFormula\\Hook::onLoadExtensionSchemaUpdates"
-		  ]
+		"LoadExtensionSchemaUpdates": [
+			"PageNameFormula\\Hook::onLoadExtensionSchemaUpdates"
+		],
+		"ParserFirstCallInit": [
+			"PageNameFormula\\Hook::onParserFirstCallInit"
+		]
 	},
 	"config": {
 		"_prefix": "PageNameFormula"
