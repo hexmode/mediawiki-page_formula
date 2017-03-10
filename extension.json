@@ -7,7 +7,7 @@
 	],
 	"require": [ "1.28" ],
 	"descriptionmsg": "pagenameformula-desc",
-	"type": "specialpage",
+	"type": "parserhook",
 	"MessagesDirs": {
 		"PageNameFormula": [
 			"i18n"
