@@ -14,7 +14,8 @@
 		]
 	},
 	"AutoloadClasses": {
-		"PageNameFormula": "src/PageNameFormula.php"
+		"PageNameFormula\\PageNameFormula": "src/PageNameFormula.php"
+		"PageNameFormula\\Hook": "src/Hook.php"
 	},
     "Hooks": {
 		  "LoadExtensionSchemaUpdates": [
