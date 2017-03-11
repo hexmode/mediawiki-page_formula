@@ -1,0 +1,11 @@
+== PageNameFormula — a MediaWiki extension ==
+
+PageNameFormula is an extension that provides a page_name_formula that will rename a page based on a formula if any template field within the formula has changed.
+
+The idea comes from Yaron Koren during [https://www.mediawiki.org/wiki/EMWCon_Spring_2017 EMWCon Spring 2017] as a project for the Create Camp day.
+
+I (Mark Hershberger) decided to use the extension as an example for how to build an extension.
+
+== Examples ==
+
+Supppose you have a page with the name <tt>Main_Page</tt> and it contains <tt><nowiki>{{</nowiki>#page_name_formula:<nowiki>{{</nowiki>Main_Page_Name<nowiki>}}}}}</nowiki></tt>
