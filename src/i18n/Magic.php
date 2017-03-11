@@ -19,5 +19,10 @@
 $magicWords = [];
 
 $magicWords['en'] = [
-	'MAG_PNF' => [ 0, 'page_name_formula' ],
+	'page_name_formula' => [ 0, 'page_name_formula' ],
 ];
+
+$magicWords['fr'] = [
+	'page_name_formula' => [ 0, 'page_nom_formulaire' ],
+];
+

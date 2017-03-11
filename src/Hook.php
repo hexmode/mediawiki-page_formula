@@ -30,8 +30,8 @@ class Hook {
 	public static function onLoadExtensionSchemaUpdates(
 		DatabaseUpdater $updater
 	) {
-		$updater->addExtensionTable( 'mapping',
-									 __DIR__ . '/../sql/mapping.sql' );
+		$updater->addExtensionTable( 'page_name_mapping',
+									 __DIR__ . '/../sql/page_name_mapping.sql' );
 	}
 
 	/**
@@ -42,7 +42,8 @@ class Hook {
 	public static function onParserFirstCallInit( $parser ) {
 		wfDebugLog( __METHOD__, "i am here" );
 		// These functions accept DOM-style arguments
-		$parser->setFunctionHook( 'page_name_formula', "PageNameFormula\\Hook::Formula" );
+		$parser->setFunctionHook( 'page_name_formula',
+								  "PageNameFormula\\Hook::pageNameFormula" );
 	}
 
 	/**
@@ -51,7 +52,7 @@ class Hook {
 	 * @param string $formula for the page
 	 * @return string
 	 */
-	public static function Formula( $parser, $formula = '' ) {
+	public static function pageNameFormula( $parser, $formula = '' ) {
 		return "hey";
 	}
 }
