@@ -8,4 +8,19 @@ I (Mark Hershberger) decided to use the extension as an example for how to build
 
 == Examples ==
 
-Supppose you have a page with the name <tt>Main_Page</tt> and it contains <tt><nowiki>{{</nowiki>#page_name_formula:<nowiki>{{</nowiki>Main_Page_Name<nowiki>}}}}}</nowiki></tt>
+Supppose you have a page with the name <tt>Main_Page</tt> and it includes <tt><nowiki>{{#page_name_formula:{{Main_Page_Name}}}}</nowiki></tt> in the wikitext of the page.
+
+=== first save ===
+The first time you save,
+# the result of the <tt><nowiki>{{Main_Page_Name}}</nowiki></tt> template would be checked,
+# the current name (<tt>Main_Page</tt>) and revision number is stored in the <tt>page_name_mapping</tt> database table, and
+# if the template resulted in anything but <tt>Main_Page</tt>, then the page is added to the [https://www.mediawiki.org/wiki/Manual:Job_queue job queue] to be renamed.
+
+=== renaming job ===
+When a page renaming job is found in the [https://www.mediawiki.org/wiki/Manual:Job_queue job queue],
+# the page is renamed using the [https://doc.wikimedia.org/mediawiki-core/master/php/classMovePage.html MovePage] class,
+# the new name (<tt>Main_Page</tt>) and revision number is stored in the <tt>page_name_mapping</tt> database table, and
+# unless otherwise specified, a redirect is left in place, and
+# any double redirects are fixed, unless <tt>[https://www.mediawiki.org/wiki/Manual:$wgFixDoubleRedirects $wgFixDoubleRedirects]</tt> is false.
+
+=== when page renames are made ===
